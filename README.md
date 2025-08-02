@@ -22,27 +22,27 @@ The primary goals of this portfolio are to:
 
 To plan the layout and user experience, I created a set of wireframes outlining the structure for both mobile and desktop views. These provide a foundational understanding of the intended user interface before development began. Ofcourse the initial wireframes are NOT the final design and the project will look much better than the wireframes!
 
-You can view the full set of wireframes in the `documentation/` folder, or see the key sections below:
+You can view the full set of wireframes in the `.documentation/` folder, or see the key sections below:
 
 ### Mobile Wireframes
 
 * **Top Section:**
-    ![Mobile Top Wireframe](documentation/wireframe-mobile-top.png)
+    ![Mobile Top Wireframe](.documentation/wireframe-mobile-top.png)
 * **Mid Section:**
-    ![Mobile Mid Wireframe](documentation/wireframe-mobile-mid.png)
+    ![Mobile Mid Wireframe](.documentation/wireframe-mobile-mid.png)
 * **Mid-Bottom Section:**
-    ![Mobile Mid-Bottom Wireframe](documentation/wireframe-mobile-mid-bottom.png)
+    ![Mobile Mid-Bottom Wireframe](.documentation/wireframe-mobile-mid-bottom.png)
 * **Bottom Section:**
-    ![Mobile Bottom Wireframe](documentation/wireframe-mobile-bottom.png)
+    ![Mobile Bottom Wireframe](.documentation/wireframe-mobile-bottom.png)
 
 ### Desktop Wireframes
 
 * **Top Section:**
-    ![Desktop Top Wireframe](documentation/wireframe-desktop-top.png)
+    ![Desktop Top Wireframe](.documentation/wireframe-desktop-top.png)
 * **Mid Section:**
-    ![Desktop Mid Wireframe](documentation/wireframe-desktop-mid.png)
+    ![Desktop Mid Wireframe](.documentation/wireframe-desktop-mid.png)
 * **Bottom Section:**
-    ![Desktop Bottom Wireframe](documentation/wireframe-desktop-bottom.png)
+    ![Desktop Bottom Wireframe](.documentation/wireframe-desktop-bottom.png)
 
 ---
 
