@@ -9,12 +9,18 @@
   --yellow-bright: #FFED00;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Montserrat', sans-serif;
   color: var(--black);
 }
 
-html, body {
+html,
+body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -30,6 +36,7 @@ html, body {
 main {
   background-color: var(--black);
   height: 100%;
+  color: white;
 }
 
 /* Header / Navbar */
@@ -86,7 +93,8 @@ nav li:hover {
 }
 
 nav li:last-child {
-  padding-bottom: 10px;;
+  padding-bottom: 10px;
+  ;
   border-bottom-left-radius: 15px;
 }
 
@@ -111,7 +119,7 @@ nav li:last-child {
   z-index: 10;
 }
 
-.menu-icon > i {
+.menu-icon>i {
   cursor: pointer;
 }
 
@@ -126,6 +134,221 @@ nav li:last-child {
 }
 
 /* Main Sections */
+
+/* Hero Section */
+
+#hero-section {
+  background-color: red;
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+.hero-content h1 {
+  color: white;
+}
+
+.hero-content a {
+  color: var(--green-bright);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.hero-content a:hover {
+  color: var(--yellow-bright);
+  transition: color 0.3s ease-in-out;
+}
+
+
+/* Showcase / Skills Showcase / About Me */
+
+#showcase {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.showcase>* {
+  width: 50%;
+}
+
+.skills-grid {
+  display: flex;
+  margin: 1px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.skill-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 100px;
+  margin-right: 5px;
+  position: relative;
+  background-color: var(--blue);
+  height: fit-content;
+  padding: 20px 0;
+  border-radius: 15px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.skill-item {
+  display: flex;
+  transition: background-color 0.3s ease-in-out;
+  width: 100%;
+}
+
+.skill-item-container:hover {
+  background-color: blue;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.skill-text {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.skill-text>i {
+  scale: 1;
+}
+
+.skill-item-container>h3 {
+  font-size: 1rem;
+  color: var(--yellow-bright);
+  margin: 0;
+}
+
+.skill-text>p {
+  font-size: 0.7rem;
+  color: var(--yellow-bright);
+  text-align: center;
+  padding-left: 20px;
+  margin-block-end: 0;
+}
+
+
+/* Skills Range Sliders */
+
+.slider-container {
+  position: relative;
+  width: 50px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: none;
+  border-radius: 5px;
+  right: 10px;
+  scale: 0.5;
+}
+
+input[type="range"] {
+  /* Reset some default styles */
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+
+  width: 300px;
+  height: 50px;
+  outline: none;
+  margin: 0;
+  padding: 0;
+
+  /* Vertically Aligns Range Input */
+  transform: rotate(270deg);
+  transform-origin: 50% 50%;
+
+  position: absolute;
+  left: -125px;
+  /* Calculated as: (original width - new height) / 2 = (300 - 50) / 2 = 125.
+               Since we're rotating 270deg, left needs to be negative */
+  top: 125px;
+  /* Calculated as: (original height - new width) / 2 = (50 - 300) / 2 = -125,
+                        but because of the rotation, it's positive.
+                        More intuitively, it shifts the center of the rotated element. */
+}
+
+/* Styling the track (the line the thumb slides on) */
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, #4CAF50, #81C784);
+  border-radius: 4px;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, #4CAF50, #81C784);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Styling the thumb (the draggable part) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #4CAF50;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  margin-top: -6px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #4CAF50;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#rangeValue {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
