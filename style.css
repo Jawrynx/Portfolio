@@ -3,9 +3,9 @@
 
 /* Global styles */
 :root {
-  --black: #000000;
-  --blue: #0F6292;
-  --green-bright: #16FF00;
+  --black: #222222;
+  --blue: #206994;
+  --green-bright: #00b61e;
   --yellow-bright: #FFED00;
 }
 
@@ -17,6 +17,13 @@ h5,
 h6 {
   font-family: 'Montserrat', sans-serif;
   color: var(--black);
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }
 
 html,
@@ -42,25 +49,49 @@ main {
 /* Header / Navbar */
 
 header {
-  background-color: var(--blue);
+  background: #2687bf;
+  background: linear-gradient(0deg, var(--blue) 0%, rgba(48, 65, 219, 1) 70%, rgba(0, 17, 255, 1) 100%);
   color: white;
   padding: 10px 20px;
   text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
 }
 
-nav h2 {
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 60px;
+}
+
+nav h2 a {
   margin: 0.3rem;
   padding: 0;
   font-size: 1.6rem;
+  font-weight: 300;
+  text-decoration: none;
+  color: white;
 }
 
-nav ul {
+#nav-links {
   position: absolute;
   top: 7px;
   right: 20px;
+  z-index: 2;
+  transition: 0.3s ease-in-out;
 }
 
-nav a {
+#nav-links.active {
+  position: absolute;
+  top: 151px;
+  transition: 0.3s ease-in-out;
+  z-index: 2;
+}
+
+#nav-links a {
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -68,18 +99,19 @@ nav a {
   transition: 0.3s ease-in-out;
 }
 
-nav a:hover {
+#nav-links a:hover {
   color: var(--green-bright);
   transition: 0.3s ease-in-out;
 }
 
-nav li {
+#nav-links li {
   position: relative;
   list-style: none;
   display: flex;
   align-items: center;
   flex-direction: column;
-  top: 35px;
+  top: -87px;
+  right: 0px;
   margin: 0;
   padding: 5px 10px;
   width: 100%;
@@ -87,27 +119,22 @@ nav li {
   background-color: var(--blue);
 }
 
-nav li:hover {
+#nav-links li:hover {
   background-color: var(--black);
   transition: 0.3s ease-in-out;
 }
 
-nav li:last-child {
+#nav-links li:last-child {
   padding-bottom: 10px;
   ;
   border-bottom-left-radius: 15px;
 }
 
-.nav-links {
-  display: none;
-}
-
 .menu-icon {
   display: block;
   cursor: pointer;
-  position: absolute;
-  top: 16px;
-  right: 10px;
+  position: relative;
+  right: 40px;
   width: 30px;
   height: 30px;
   background-color: var(--black);
@@ -124,13 +151,13 @@ nav li:last-child {
 }
 
 .menu-icon:hover {
-  background-color: var(--green-bright);
+  background-color: var(--black);
   transition: background-color 0.3s ease-in-out;
 }
 
 .menu-icon:active {
   background-color: var(--yellow-bright);
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.05s ease-in-out;
 }
 
 /* Main Sections */
@@ -138,23 +165,45 @@ nav li:last-child {
 /* Hero Section */
 
 #hero-section {
-  background-color: red;
-  height: 50vh;
+  background-image: url('/assets/images/background5.jpeg');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 400px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  top: 80px;
+}
+
+#hero-section .btn {
+  z-index: 3;
+  color: white;
 }
 
 .hero-content {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content h1 {
   color: white;
+  font-weight: 1000;
+  font-size: 2.5rem;
+  margin-top: 80px;
 }
 
 .hero-content a {
@@ -169,23 +218,44 @@ nav li:last-child {
   transition: color 0.3s ease-in-out;
 }
 
+.triangle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+
+.triangle-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
 
 /* Showcase / Skills Showcase / About Me */
 
 #showcase {
+  position: relative;
+  top: 80px;
   display: flex;
   justify-content: space-evenly;
+  z-index: 2;
+  background: #0dff00;
+  background: linear-gradient(175deg, var(--green-bright) 0%, rgba(93, 222, 164, 1) 65%, var(--blue) 98%);
+  color: var(--black);
+  box-shadow: 4px 0px 25px 20px rgba(51, 255, 0, 0.2);
 }
 
 .showcase>* {
   width: 50%;
 }
 
-.skills-showcase h2 {
-  text-align: center;
-  font-size: 2rem;
-  color: var(--yellow-bright);
-  margin-bottom: 20px;
+.skills-showcase {
+  margin: 20px 0;
 }
 
 .skills-grid {
@@ -204,9 +274,9 @@ nav li:last-child {
   width: 30%;
   margin-right: 5px;
   position: relative;
-  background-color: var(--blue);
-  height: 200px;
-  padding: 20px 0;
+  background-color: rgb(255, 255, 255);
+  height: 160px;
+  padding: 5px 0;
   border-radius: 15px;
   transition: background-color 0.3s ease-in-out;
 }
@@ -215,7 +285,7 @@ nav li:last-child {
   display: flex;
   transition: background-color 0.3s ease-in-out;
   width: 100%;
-  height: 100%; 
+  height: 100%;
   justify-content: space-between;
 }
 
@@ -225,27 +295,26 @@ nav li:last-child {
 }
 
 .skill-text {
-  width: 80%;
-  height: 
-  100%;
+  width: 100%;
+  height: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.skill-text>i {
-  scale: 1;
+.skill-item-container>i {
+  scale: 1.5;
 }
 
 .skill-item-container>h3 {
   font-size: 1rem;
-  color: var(--yellow-bright);
+  color: var(--black);
   margin: 0;
 }
 
 .skill-text>p {
   font-size: 0.7rem;
-  color: var(--yellow-bright);
+  color: var(--black);
   text-align: center;
   padding-left: 5px;
   margin-block-end: 0;
@@ -266,8 +335,8 @@ nav li:last-child {
   border: none;
   background-color: none;
   border-radius: 5px;
-  right: 10px;
-  top: 15px;
+  right: -10px;
+  top: 8px;
   scale: 0.5;
 }
 
@@ -277,7 +346,7 @@ input[type="range"] {
   appearance: none;
   background: transparent;
 
-  width: 300px;
+  width: 200px;
   height: 50px;
   outline: none;
   margin: 0;
@@ -337,9 +406,23 @@ input[type="range"]::-moz-range-thumb {
   color: #333;
 }
 
+/* About Me */
 
+.about-me {
+  color: var(--black);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-
+.about-me p {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  height: 100%;
+  padding: 20px 0;
+  margin: 20px 0;
+}
 
 
 
