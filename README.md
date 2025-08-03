@@ -1,11 +1,11 @@
 # Portfolio Project
----
+
 ## Details
 
 * **Author:** Jawdan Angelos (Jawrynx)
 * **Project Description:** This portfolio project serves as a comprehensive showcase of my skills, technical abilities, and project developments. It's designed to provide developers and potential employers easy access to information regarding my CV, past projects, learned technologies/languages/skills, personal goals, and work specialities.
 
----
+
 
 ## Project Goals
 
@@ -16,7 +16,7 @@ The primary goals of this portfolio are to:
 * **Facilitate easy communication:** Provide clear contact information and links to my professional profiles.
 * **Document my learning journey:** Reflect on personal goals and the growth achieved through various projects.
 
----
+
 
 ## Wireframes & Initial Design
 
@@ -44,7 +44,7 @@ You can view the full set of wireframes in the `.documentation/` folder, or see 
 * **Bottom Section:**
     ![Desktop Bottom Wireframe](.documentation/wireframe-desktop-bottom.png)
 
----
+
 
 ## Technologies Used
 
@@ -55,7 +55,7 @@ This project is being built using:
 * **Deployment:** GitHub Pages
 * **Tools:** VS Code
 
----
+
 
 ## Installation & Setup
 
@@ -72,7 +72,7 @@ To get a local copy up and running, follow these simple steps:
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
----
+
 
 ## Contact
 
@@ -81,7 +81,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * **LinkedIn:** [https://www.linkedin.com/in/jawdan-angelos-b7217a31b/](https://www.linkedin.com/in/jawdan-angelos-b7217a31b/)
 * **Email:** [jawrynx@gmail.com](jawrynx@gmail.com)
 
----
+
 
 ## Acknowledgements
 
