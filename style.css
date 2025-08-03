@@ -181,6 +181,13 @@ nav li:last-child {
   width: 50%;
 }
 
+.skills-showcase h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--yellow-bright);
+  margin-bottom: 20px;
+}
+
 .skills-grid {
   display: flex;
   margin: 1px;
@@ -195,11 +202,10 @@ nav li:last-child {
   align-items: center;
   justify-content: center;
   width: 30%;
-  height: 100px;
   margin-right: 5px;
   position: relative;
   background-color: var(--blue);
-  height: fit-content;
+  height: 200px;
   padding: 20px 0;
   border-radius: 15px;
   transition: background-color 0.3s ease-in-out;
@@ -209,6 +215,8 @@ nav li:last-child {
   display: flex;
   transition: background-color 0.3s ease-in-out;
   width: 100%;
+  height: 100%; 
+  justify-content: space-between;
 }
 
 .skill-item-container:hover {
@@ -217,12 +225,12 @@ nav li:last-child {
 }
 
 .skill-text {
-  display: flex;
   width: 80%;
+  height: 
+  100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
 }
 
 .skill-text>i {
@@ -239,8 +247,10 @@ nav li:last-child {
   font-size: 0.7rem;
   color: var(--yellow-bright);
   text-align: center;
-  padding-left: 20px;
+  padding-left: 5px;
   margin-block-end: 0;
+  position: relative;
+  top: 0;
 }
 
 
@@ -249,7 +259,7 @@ nav li:last-child {
 .slider-container {
   position: relative;
   width: 50px;
-  height: 300px;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -257,6 +267,7 @@ nav li:last-child {
   background-color: none;
   border-radius: 5px;
   right: 10px;
+  top: 15px;
   scale: 0.5;
 }
 
@@ -277,13 +288,8 @@ input[type="range"] {
   transform-origin: 50% 50%;
 
   position: absolute;
-  left: -125px;
-  /* Calculated as: (original width - new height) / 2 = (300 - 50) / 2 = 125.
-               Since we're rotating 270deg, left needs to be negative */
-  top: 125px;
-  /* Calculated as: (original height - new width) / 2 = (50 - 300) / 2 = -125,
-                        but because of the rotation, it's positive.
-                        More intuitively, it shifts the center of the rotated element. */
+  left: -110px;
+  top: 35px;
 }
 
 /* Styling the track (the line the thumb slides on) */
