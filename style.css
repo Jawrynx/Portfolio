@@ -35,6 +35,7 @@ body {
   font-family: 'Lato', sans-serif;
   color: var(--black);
   height: 100%;
+  overflow-x:hidden;
 }
 
 .active {
@@ -443,24 +444,22 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .projects-container {
-    text-align: center; 
-    padding-bottom: 50px; 
-    background: #2687bf;
-    background: linear-gradient(
-      0deg,
+  text-align: center;
+  padding-bottom: 50px;
+  background: #2687bf;
+  background: linear-gradient(0deg,
       var(--blue) 0%,
       var(--yellow-bright) 70%,
       var(--yellow-bright) 75%,
-      var(--blue) 100%
-      );
+      var(--blue) 100%);
 }
 
 .projects-container h2 {
-    color: white;
-    font-size: 2.5rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    padding: 20px;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 20px;
 }
 
 
@@ -474,140 +473,144 @@ input[type="range"]::-moz-range-thumb {
 
 /* Projects Carousel */
 .projects-carousel {
-    position: relative;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    background-color: var(--black);
-    color: white;
-    width: 100%;
-    overflow: hidden;
-    padding-bottom: 50px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black);
+  color: white;
+  width: 100%;
+  overflow: hidden;
 }
 
 .project-items {
-    display: flex !important;
-    overflow-x: auto;
-    flex-direction: row;
-    scroll-snap-type: x mandatory;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    position: relative;
-    left: 10px;
+  display: flex !important;
+  overflow-x: auto;
+  flex-direction: row;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  height: 250px;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  position: relative;
 }
 
 .project-items::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .project-item {
-    flex: 0 0 auto;
-    width: 300px;
-    height: 200px;
-    margin: 10px;
-    background-color: var(--blue);
-    color: white;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    scroll-snap-align: start;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-    padding: 20px;
-    box-sizing: border-box;
+  flex: 0 0 auto;
+  width: 100vw;
+  height: 200px;
+  background-color: var(--blue);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  box-sizing: border-box;
 }
 
 .project-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .project-item h3 {
-    margin-bottom: 5px;
-    color: white;
+  margin-bottom: 5px;
+  color: white;
+  align-self: start;
+  padding-left: 10px;
 }
 
 .project-item p {
-    text-align: center;
-    margin-bottom: 15px;
+  align-self: start;
+  padding-left: 10px;
+  color: white;
+  margin-bottom: 15px;
 }
 
 .project-item .btn {
-    display: inline-block;
-    background-color: var(--green-bright);
-    color: var(--black);
-    padding: 8px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  background-color: var(--green-bright);
+  color: var(--black);
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  align-self: end;
+  margin-top: 30px;
+  margin-right: 20px;
+  justify-self: end;
+  ;
 }
 
 .project-item .btn:hover {
-    background-color: var(--yellow-bright);
+  background-color: var(--yellow-bright);
 }
 
 .project-controls {
-    position: absolute;
-    top: 44%;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    padding: 0 10px;
-    z-index: 2;
+  position: absolute;
+  top: 42%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 10px;
+  z-index: 2;
 }
 
 .project-controls button {
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    border-radius: 50%;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-controls button:hover {
-    background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .pagination {
-    position: absolute;
-    bottom: -95px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    z-index: 2;
+  position: absolute;
+  bottom: -105px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
 }
 
 .dot {
-    height: 10px;
-    width: 10px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  height: 16px;
+  width: 16px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .dot.active {
-    background-color: var(--blue);
+  background-color: var(--blue);
 }
 
 
@@ -616,11 +619,11 @@ input[type="range"]::-moz-range-thumb {
 #skills {
   position: relative;
   top: 80px;
-  background-color: gray;
+  background-color: var(--blue);
   padding: 20px 0;
 }
 
-.skills-container > h2 {
+.skills-container>h2 {
   text-align: center;
   color: white;
   font-weight: 400;
@@ -687,7 +690,8 @@ input[type="range"]::-moz-range-thumb {
   text-align: center;
 }
 
-.download > div > a {
+.download>div>a,
+.portfolio-project-links>p>a {
   display: inline-block;
   background-color: var(--blue);
   color: white;
@@ -697,10 +701,12 @@ input[type="range"]::-moz-range-thumb {
   font-weight: bold;
   transition: background-color 0.3s ease-in-out;
   margin: 20px 0;
+  font-weight: 1000;
   text-align: center;
 }
 
-.download > div > a:hover {
+.download>div>a:hover,
+.portfolio-project-links>p>a:hover {
   background-color: var(--green-bright);
   transition: background-color 0.3s ease-in-out;
 }
@@ -728,7 +734,11 @@ input[type="range"]::-moz-range-thumb {
 /* Footer */
 
 footer {
-  background-color: var(--yellow-bright);
+  background: #FFED00;
+  background: linear-gradient(0deg,
+      rgba(255, 237, 0, 1) 18%,
+      rgba(250, 250, 172, 1) 59%,
+      rgba(34, 34, 34, 1) 100%);
   color: var(--black);
   text-align: center;
   position: relative;
@@ -739,9 +749,13 @@ footer {
   padding: 10px 0;
   justify-content: center;
   align-items: center;
+  padding-top: 65px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-footer p {
+footer>p {
   margin: 0;
   position: relative;
   background-color: var(--black);
@@ -749,4 +763,51 @@ footer p {
   border-radius: 25px;
   width: fit-content;
   padding: 5px 20px;
+  font-weight: 300;
+}
+
+.footer-content {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content h3 {
+  color: white;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.footer-content > p {
+  background-color: var(--black);
+  font-weight: 300;
+  color: white;
+  margin: 20px 0 0 0;
+  padding: 10px;
+}
+
+.portfolio-project-links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-items: end;
+}
+
+.portfolio-project-links>p {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-project-links>p>strong {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.portfolio-project-links>p>a {
+  font-weight: 1000;
 }

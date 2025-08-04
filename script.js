@@ -5,6 +5,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuIcon = document.getElementById("menu-icon");
     const navLinks = document.getElementById("nav-links");
 
+    // Ensure the menu icon and nav links are present
+    const navLinkElements = document.querySelectorAll(".nav-link");
+    navLinkElements.forEach(link => {
+        link.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+        });
+    });
+    // Toggle the active class on the nav-links when the menu icon is clicked
+
     menuIcon.addEventListener("click", function () {
         navLinks.classList.toggle("active");
     });
