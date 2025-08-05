@@ -30,7 +30,7 @@ function moveSlide(n) {
 
 function showSlides(n) {
     const projectItems = document.querySelectorAll('.project-item');
-    const dot = document.querySelectorAll('dot');
+    const dots = document.querySelectorAll('dot');
     const projectsCarousel = document.querySelector('.projects-carousel');
 
     if (projectItems.length === 0) {
@@ -53,7 +53,7 @@ function showSlides(n) {
     // Update active dots
 
     dots.forEach(dot => dot.classList.remove('active'));
-    if (dot[currentSlideIndex]) {
+    if (dots[currentSlideIndex]) {
         dots[currentSlideIndex].classList.add('active')
     }
 }
@@ -61,7 +61,3 @@ function showSlides(n) {
 document.addEventListener('DOMContentLoaded', () => {
     showSlides(currentSlideIndex);
 });
-
-document.querySelector('.project-items').addEventListener('scroll', () => {
-    
-})

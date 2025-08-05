@@ -35,7 +35,7 @@ body {
   font-family: 'Lato', sans-serif;
   color: var(--black);
   height: 100%;
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
 
 .active {
@@ -162,7 +162,8 @@ nav h2 a {
 }
 
 #desktop-nav-links {
-  display: none; /* Hidden by default, shown on larger screens */
+  display: none;
+  /* Hidden by default, shown on larger screens */
 }
 
 /* Main Sections */
@@ -206,6 +207,10 @@ nav h2 a {
   z-index: 1;
 }
 
+.hero-content p {
+  padding: 0 10px;
+}
+
 .hero-content h1 {
   color: white;
   font-weight: 1000;
@@ -223,6 +228,15 @@ nav h2 a {
 .hero-content a:hover {
   color: var(--yellow-bright);
   transition: color 0.3s ease-in-out;
+}
+
+.hero-content>.hero-btn {
+  margin-top: 20px;
+  background-color: var(--black);
+  padding: 5px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--green-bright);
+  font-weight: 300;
 }
 
 .triangle {
@@ -328,14 +342,21 @@ nav h2 a {
 }
 
 .skill-text>p {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 800;
-  color: var(--blue);
   text-align: center;
   padding-left: 5px;
   margin-block-end: 0;
   position: relative;
   top: 0;
+  font-weight: 300;
+  background-color: var(--black);
+  margin-left: 5px;
+  height: 100%;
+  border-radius: 10px;
+  color: white;
+  text-align: right;
+  padding-right: 5px;
 }
 
 
@@ -431,7 +452,7 @@ input[type="range"]::-moz-range-thumb {
   align-items: center;
 }
 
-.about-me > p {
+.about-me>p {
   background-color: rgba(0, 0, 0, 0.5);
   font-weight: 300;
   color: white;
@@ -489,7 +510,8 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .projects-grid {
-  display: none; /* Hidden by default, shown on larger screens */
+  display: none;
+  /* Hidden by default, shown on larger screens */
 }
 
 /* Projects Carousel */
@@ -835,7 +857,7 @@ footer>p {
   justify-content: center;
 }
 
-.portfolio-info > p {
+.portfolio-info>p {
   background-color: var(--black);
   font-weight: 300;
   color: white;
@@ -870,16 +892,82 @@ footer>p {
   min-height: 47px;
   display: flex;
   align-items: center;
-  justify-content: center;;
+  justify-content: center;
+  ;
+}
+
+/* Mobiles */
+
+@media only screen and (min-width: 320px) {
+
+  /* Skills Showcase */
+  .skill-text>p {
+    font-weight: 700;
+  }
+}
+
+@media only screen and (min-width: 420px) {
+
+  /* Hero Section */
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .hero-btn {
+    scale: 1.2;
+  }
+
+  /* Skills Showcase */
+  .skill-text p {
+    font-size: 0.80rem;
+    font-weight: 600;
+  }
+
+
+}
+
+@media only screen and (min-width: 480px) {
+
+  /* Hero Section */
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  /* Skills Showcase */
+  .skill-text p {
+    font-size: 0.85rem;
+    font-weight: 400;
+  }
 }
 
 
 @media only screen and (min-width: 560px) {
+
+    /* Hero Section */
+
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+
+  .hero-content p {
+    font-size: 1.35rem;
+  }
+
+  .hero-btn {
+    scale: 1.4;
+  }
+
   /* SKills Showcase */
 
-  .skill-text > p {
+  .skill-text>p {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 300;
   }
 
   .slider-container {
@@ -892,15 +980,19 @@ footer>p {
 
   .about-me {
     flex-direction: row;
+    height: 387px;
+    margin: 40px 0;
   }
 
-  .about-me > p {
+  .about-me>p {
     width: 50%;
     margin-left: 20px;
     padding: 8px;
     height: 100%;
     border-radius: 20px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
   }
 
   /* Projects */
@@ -921,7 +1013,7 @@ footer>p {
     gap: 20px;
   }
 
-  .portfolio-info > p {
+  .portfolio-info>p {
     border-radius: 20px;
   }
 
@@ -934,7 +1026,12 @@ footer>p {
 }
 
 @media only screen and (min-width: 768px) {
+
   /* Navbar */
+  #desktop-nav-links {
+    display: flex;
+  }
+
   .menu-icon {
     display: none;
   }
@@ -966,7 +1063,7 @@ footer>p {
   /* Hero Section */
 
   .hero-content h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
   }
 
   /* Skills Showcase */
@@ -981,13 +1078,15 @@ footer>p {
   }
 
   .skill-text p {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 500;
   }
 
   .about-me {
     width: 50%;
     gap: 20px;
+    height: auto;
+    margin: 0;
   }
 
   .about-me p {
@@ -1030,6 +1129,25 @@ footer>p {
 }
 
 @media only screen and (min-width: 992px) {
+  /* Skills Showcase */
+
+  .skill-text p {
+    font-size: 0.85rem;
+    /* font-weight: 300;
+    background-color: var(--black);
+    margin-left: 5px;
+    height: 100%;
+    border-radius: 10px;
+    color: white;
+    text-align: right;
+    padding-right: 5px; */
+  }
+
+  /* About Me */
+
+  .about-me p {
+    font-size: 1.1rem;
+  }
 
   /* Projects */
 
@@ -1083,7 +1201,7 @@ footer>p {
     font-size: 2rem;
     font-weight: 200;
     margin-top: 5px;
-  } 
+  }
 
   .skill-icon i {
     font-size: 5rem;
@@ -1104,5 +1222,30 @@ footer>p {
 }
 
 @media only screen and (min-width: 1200px) {
-  
+  #hero-section {
+    height: 65vh;
+  }
+
+  .hero-content h1 {
+    font-size: 5rem;
+  }
+
+  .hero-content p {
+    font-size: 2rem;
+  }
+
+  .hero-btn {
+    scale: 1.7;
+  }
+
+  /* Skills Showcase */
+
+  .skill-text p {
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  .about-me p {
+    font-size: 1.25rem;
+  }
 }
