@@ -58,7 +58,10 @@ This project is being built using:
 
 
 ## Installation & Setup
+### Deployed Version
+[https://jawrynx.github.io/Portfolio/](https://jawrynx.github.io/Portfolio/)
 
+### Local Setup
 To get a local copy up and running, follow these simple steps:
 
 1.  **Clone the repository (bash / git-bash / direct download):**
