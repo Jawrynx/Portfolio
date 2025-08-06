@@ -47,6 +47,28 @@ main {
   color: white;
 }
 
+.word-space {
+  width: 20px;
+}
+
+.subtitle-word-space {
+  width: 1%;
+}
+
+/* Animations */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /* Header / Navbar */
 
 header {
@@ -173,7 +195,7 @@ nav h2 a {
 /* Hero Section */
 
 #hero-section {
-  background-image: url('/assets/images/background5.jpeg');
+  background-image: url('./assets/images/background5.jpeg');
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -193,6 +215,27 @@ nav h2 a {
   color: white;
 }
 
+.word-container {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.word-container span, #hero-subtitle .word-container span {
+    display: inline-block;
+    scale: 1;
+    transition: 0.2s ease-in-out;
+    cursor: default;
+}
+
+.word-container span:hover, #hero-subtitle .word-container span:hover {
+    scale: 1.4;
+    transition: 0.2s ease-in-out;
+}
+
+.word-space {
+    display: inline-block;
+}
+
 .hero-content {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
@@ -209,6 +252,7 @@ nav h2 a {
 
 .hero-content p {
   padding: 0 10px;
+  animation: pulse 10s infinite;
 }
 
 .hero-content h1 {
@@ -216,6 +260,7 @@ nav h2 a {
   font-weight: 1000;
   font-size: 2.5rem;
   margin-top: 80px;
+  animation: pulse 10s infinite;
 }
 
 .hero-content a {

@@ -58,6 +58,91 @@ function showSlides(n) {
     }
 }
 
+// Auto-slide every 5 seconds
+setInterval(() => {
+    moveSlide(1);
+}, 5000);
+
+// Initialize the carousel
 document.addEventListener('DOMContentLoaded', () => {
     showSlides(currentSlideIndex);
+});
+
+// Makes Hero Section Title and subtitle Characters enlarge slightly when hovered over
+document.addEventListener('DOMContentLoaded', function () {
+    const heroTitle = document.getElementById('hero-title');
+    const heroContainer = document.getElementById('hero-container');
+    const heroSubtitle = document.getElementById('hero-subtitle');
+
+    if (!heroTitle || !heroContainer || !heroSubtitle) {
+        console.error('One or more hero elements not found.');
+        return;
+    }
+
+    // --- Process Hero Title ---
+    const originalTitleText = heroTitle.textContent.replace(/\s*<br>\s*/g, ' ').trim();
+    heroTitle.remove();
+
+    const newHeroTitle = document.createElement('h1');
+    newHeroTitle.id = 'hero-title';
+
+    const titleWords = originalTitleText.split(' ');
+    titleWords.forEach((word, index) => {
+        const wordContainer = document.createElement('span');
+        wordContainer.classList.add('word-container');
+
+        word.split('').forEach(char => {
+            const span = document.createElement('span');
+            span.textContent = char;
+            wordContainer.appendChild(span);
+        });
+
+        newHeroTitle.appendChild(wordContainer);
+
+        // Check if the last character of the word is a comma
+        if (word.endsWith(',')) {
+            const br = document.createElement('br');
+            newHeroTitle.appendChild(br);
+        } else if (index < titleWords.length - 1) { // Add space for regular words
+            const space = document.createElement('span');
+            space.textContent = ' ';
+            space.classList.add('word-space');
+            newHeroTitle.appendChild(space);
+        }
+    });
+
+
+    // --- Process Hero Subtitle ---
+    const originalSubText = heroSubtitle.textContent.replace(/\s*<br>\s*/g, ' ').trim();
+    heroSubtitle.remove(); // Remove the original p
+
+    const newHeroSubtitle = document.createElement('p');
+    newHeroSubtitle.id = 'hero-subtitle';
+
+    const subWords = originalSubText.split(' ');
+    subWords.forEach((word, index) => {
+        const wordContainer = document.createElement('span');
+        wordContainer.classList.add('word-container');
+
+        word.split('').forEach(char => {
+            const span = document.createElement('span');
+            span.textContent = char;
+            wordContainer.appendChild(span);
+        });
+        
+        newHeroSubtitle.appendChild(wordContainer);
+        
+        // Add a space between words
+        if (index < subWords.length - 1) {
+            const space = document.createElement('span');
+            space.textContent = ' ';
+            space.classList.add('subtitle-word-space');
+            newHeroSubtitle.appendChild(space);
+        }
+    });
+
+    // --- Final Placement ---
+    // Prepend the new elements to the container in the correct order
+    heroContainer.prepend(newHeroSubtitle);
+    heroContainer.prepend(newHeroTitle);
 });
