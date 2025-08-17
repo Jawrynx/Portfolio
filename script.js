@@ -129,9 +129,9 @@ document.addEventListener('DOMContentLoaded', function () {
             span.textContent = char;
             wordContainer.appendChild(span);
         });
-        
+
         newHeroSubtitle.appendChild(wordContainer);
-        
+
         // Add a space between words
         if (index < subWords.length - 1) {
             const space = document.createElement('span');
@@ -145,4 +145,48 @@ document.addEventListener('DOMContentLoaded', function () {
     // Prepend the new elements to the container in the correct order
     heroContainer.prepend(newHeroSubtitle);
     heroContainer.prepend(newHeroTitle);
+});
+
+// Project Pop Up Card interactivity
+
+document.addEventListener('DOMContentLoaded', function () {
+    const viewProjButtons = document.querySelectorAll('.project-btn');
+    const popupContainer = document.getElementById('project-popover');
+    const popupContent = document.getElementById('popover-content');
+
+    const projectTitle = document.getElementById('project-title');
+    const projectDescription = document.getElementById('project-description');
+    const closeBtn = document.getElementById('close-btn');
+
+    viewProjButtons.forEach(button => {
+        button.addEventListener('click', openPopUp);
+    });
+
+    closeBtn.addEventListener('click', closePopUp);
+
+    // For Opening Project Popover
+
+    function openPopUp(event) {
+        event.preventDefault();
+        // Using attribute data to load individual project info as we are not using a backend
+        const projectTitleText = event.currentTarget.getAttribute('data-project-title');
+        const projectDescriptionText = event.currentTarget.getAttribute('data-project-description');
+
+        projectTitle.textContent = projectTitleText;
+        projectDescription.textContent = projectDescriptionText;
+
+        popupContainer.classList.add('proj-active');
+    }
+
+    // For closing Project popover
+    function closePopUp() {
+        popupContent.classList.add('popover-closing'); // This class animates out the popover by scaling down.
+        popupContainer.classList.add('background-none');
+        popupContent.addEventListener('animationend', handleAnimationEnd, { once: true }); // Removes animation, active and bg none classes. Once animation ends
+    }
+
+    function handleAnimationEnd() {
+        popupContainer.classList.remove('proj-active', 'background-none');
+        popupContent.classList.remove('popover-closing');
+    }
 });

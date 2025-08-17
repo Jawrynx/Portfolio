@@ -55,6 +55,10 @@ main {
   width: 1%;
 }
 
+.background-none {
+  background: none !important;
+}
+
 /* Animations */
 
 @keyframes pulse {
@@ -66,6 +70,30 @@ main {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes popoverFocus {
+  0% {
+    opacity: 0;
+    scale: 0.4;
+  }
+  
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes popoverUnfocus {
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+  
+  100% {
+    opacity: 0;
+    scale: 0.4;
   }
 }
 
@@ -364,7 +392,7 @@ nav h2 a {
 }
 
 .skill-item-container:hover {
-  background-color: blue;
+  background-color: rgb(127, 127, 180);
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -400,7 +428,6 @@ nav h2 a {
   height: 100%;
   border-radius: 10px;
   color: white;
-  text-align: right;
   padding-right: 5px;
 }
 
@@ -701,6 +728,67 @@ input[type="range"]::-moz-range-thumb {
   background-color: var(--blue);
 }
 
+/* Projects Popover */
+
+#project-popover {
+  display: none;
+  /* Hidden by default, shown on larger screens */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+}
+
+#popover-content {
+  position: relative;
+  background-color: var(--black);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  padding: 2rem 0;
+  text-align: center;
+  scale: 0.2;
+  opacity: 0;
+  z-index: 12;
+  animation: popoverFocus 0.3s ease-in-out;
+}
+
+.proj-active {
+  display: flex !important;
+}
+
+#project-popover.proj-active > #popover-content {
+  scale: 1;
+  opacity: 1;
+}
+
+#popover-content.popover-closing {
+  animation: popoverUnfocus 0.2s forwards;
+}
+
+#popover-content > h3 {
+  color: white;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+#popover-content > p {
+  margin: 2rem 0;
+}
+
+#popover-content > button {
+  border: none;
+  background-color: var(--green-bright);
+  color: var(--black);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  z-index: 12;
+}
 
 /* Skills & Technologies Section */
 
